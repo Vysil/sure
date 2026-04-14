@@ -113,3 +113,4 @@ Maybe and Sure are both distributed under
 an [AGPLv3 license](https://github.com/we-promise/sure/blob/main/LICENSE).
 - "Maybe" is a trademark of Maybe Finance, Inc.
 - "Sure" is not, and refers to this community fork.
+
