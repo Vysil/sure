@@ -87,7 +87,9 @@ jobs:
         shell: bash
         run: |
           BASE_CONFIG="type=sha,format=long"
-          if [[ $GITHUB_EVENT_NAME == "schedule" ]]; then
+          if [[ $GITHUB_EVENT_NAME == "workflow_dispatch" ]]; then
+            BASE_CONFIG+=$'\n'"type=raw,value=custom-latest"
+          elif [[ $GITHUB_EVENT_NAME == "schedule" ]]; then
             BASE_CONFIG+=$'\n'"type=schedule,pattern=nightly"
             BASE_CONFIG+=$'\n'"type=schedule,pattern=nightly-{{date 'ddd'}}"
           elif [[ "$GITHUB_REF" == refs/tags/* ]]; then
