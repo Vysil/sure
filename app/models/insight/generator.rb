@@ -42,7 +42,7 @@ class Insight::Generator
         instructions: system_instructions
       )
 
-      response.messages.first&.output_text&.strip.presence || prompt
+      response.data&.messages&.first&.output_text&.strip.presence || prompt
     rescue => e
       Rails.logger.warn("[Insight::Generator] LLM body generation failed: #{e.message}")
       prompt
